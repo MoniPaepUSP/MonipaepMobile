@@ -1,5 +1,5 @@
 import { MaterialIcons } from '@expo/vector-icons';
-import CheckBox from '@react-native-community/checkbox';
+import CheckBox from 'expo-checkbox';
 import { useNavigation } from '@react-navigation/native';
 import React, { useRef, useState } from 'react';
 import {
@@ -576,15 +576,20 @@ export function SignUp(){
                 ]
             )
         }catch(error){
-            Alert.alert(
-                "Erro ao efetuar o cadastro",
-                error.response.data.message,
-                [
-                    {
-                        text: "Ok"
-                    }
-                ]
-            )
+            if(error instanceof Error){
+                Alert.alert(
+                    "Erro ao efetuar o cadastro",
+                    error.message,
+                    [
+                        {
+                            text: "Ok"
+                        }
+                    ]
+                )
+            }else{
+                console.log(error);
+            }
+            
         }
 
         return

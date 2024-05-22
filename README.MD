@@ -26,6 +26,8 @@ Alternativamente, é possível emular a aplicação em seu celular com as princi
 - Rode `npx expo start --dev-client` em seu computador e conecte o app ao servidor exposto.
 
 
+- **Realize o commit das mudanças pelo comando `npx cz`**
+
 ## Padrão Commitizen
 
 - **feat**: adiciona ou remove novas funcionalidades.

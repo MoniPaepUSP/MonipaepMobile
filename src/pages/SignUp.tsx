@@ -575,6 +575,7 @@ export function SignUp(){
                     }
                 ]
             )
+            return response;
         }catch(error){
             Alert.alert(
                 "Erro ao efetuar o cadastro",

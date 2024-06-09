@@ -223,6 +223,7 @@ export function Login(){
                     }
                 ]
             )
+            return response;
         }catch(error){
             Alert.alert(
                 "Erro ao efetuar o login.\nConfira se digitou corretamente",

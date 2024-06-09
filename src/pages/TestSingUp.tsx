@@ -1,5 +1,5 @@
 import { MaterialIcons } from '@expo/vector-icons';
-import CheckBox from '@react-native-community/checkbox';
+import CheckBox from 'expo-checkbox';
 import { useNavigation } from '@react-navigation/native';
 import React, { useRef, useState } from 'react';
 import {

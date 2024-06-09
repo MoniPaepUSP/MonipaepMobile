@@ -8,6 +8,9 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+package-lock.json
+raw-query.sql
+.env
 
 # macOS
 .DS_Store

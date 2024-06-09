@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import{ StyleSheet, Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native'
-import CheckBox from '@react-native-community/checkbox';
+import CheckBox from 'expo-checkbox';
 
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'

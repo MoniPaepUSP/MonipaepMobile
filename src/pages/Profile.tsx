@@ -1,21 +1,13 @@
 import { MaterialIcons } from '@expo/vector-icons';
 import React, { useState } from 'react';
-import {
-    Dimensions, Image,
-    StyleSheet,
-    Text,
-
-
-    View
-} from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
-
 import patientImg from '../assets/patientImg.png';
 import { FAQ, GreenButton, HeaderSimple, PatientStatus, SafeAreaView } from '../Components';
 import { useAuth } from '../contexts/Auth';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
-
+import { Menu } from "../Components/Menu";
 
 export function Profile(){
     const navigation = useNavigation()
@@ -44,6 +36,16 @@ export function Profile(){
         navigation.navigate('Config')
     }
 
+    const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuVisible(!isMenuVisible);
+    };
+
+    function setConditions(){
+        navigation.navigate('HealthConditions')
+    }
+
     return(
         <SafeAreaView  
             accessible={true}
@@ -56,13 +58,18 @@ export function Profile(){
                 style={styles.container}
                 accessible={true} 
             >
+
                 <MaterialIcons 
                     style={styles.icons} 
-                    accessible={true} accessibilityLabel="Menu" 
-                    name="menu" size={24} 
+                    accessible={true} 
+                    accessibilityLabel="Menu" 
+                    name={isMenuVisible ? "close" : "menu"} 
+                    size={24} 
                     color="black"
-                    onPress={handleConfig} 
+                    onPress={toggleMenu}
                 />
+                {isMenuVisible && <Menu onCloseMenu={toggleMenu} />}
+
                 <View
                     style={styles.bodyUp}
                     accessible={true} 
@@ -120,13 +127,14 @@ export function Profile(){
 
 const styles = StyleSheet.create({
     container:{
-        
+        alignItems:'center'
     },
     bodyUp:{
         alignItems: 'center',
     },
     icons:{
-        padding: 20
+        padding: 20,
+        right:'40%'
     },
     image:{
         width: Dimensions.get('window').height * 0.30,
@@ -159,3 +167,5 @@ const styles = StyleSheet.create({
         padding: 20
     }
 })
+
+

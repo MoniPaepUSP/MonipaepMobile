@@ -1,12 +1,12 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "--openssl-legacy-provider expo start",
-    "commit": "git add .& cz",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "start": "npx --openssl-legacy-provider expo start",
+    "commit": "git add . && cz",
+    "android": "npx expo start --android",
+    "ios": "npx expo start --ios",
+    "web": "export NODE_OPTIONS=--openssl-legacy-provider && npx expo start --web -c",
+    "eject": "npx expo eject"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.1.0",

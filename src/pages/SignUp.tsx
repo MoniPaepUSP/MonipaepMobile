@@ -575,6 +575,7 @@ export function SignUp(){
                     }
                 ]
             )
+            return response;
         }catch(error){
             if(error instanceof Error){
                 Alert.alert(

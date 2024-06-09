@@ -38,7 +38,6 @@ interface AutContextData{
     token: string;
     signIn(CPF: string, password: string): Promise<data>;
     signOut(): void;
-    
 }
 
 const AuthContext =  createContext<AutContextData>({} as AutContextData);
